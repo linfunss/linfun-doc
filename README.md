@@ -11,7 +11,7 @@ pnpm docs:build
 pnpm docs:preview
 ```
 
-默认站点路径为 `/linfun-doc/`，GitHub Pages 地址为 https://linfunss.github.io/linfun-doc/ 。自定义域名根路径部署时设置 `VITEPRESS_BASE=/` 后重新构建。产物位于 `docs/.vitepress/dist/`；不提交依赖或产物。
+站点地址为 https://doc.lin-fun.com/ ，VitePress 与 CI 均使用根路径 `/`，无需设置 `VITEPRESS_BASE` 仓库变量。产物位于 `docs/.vitepress/dist/`；不提交依赖或产物。
 
 站点包含中文全文搜索、明暗主题、分类导航、代码行号、GitHub 编辑入口、构建提交链接及北京时间精确到秒的 Git 更新时间。构建依赖完整 Git 历史；浅克隆先补全历史。
 
