@@ -1,4 +1,4 @@
-# LinFun 文档
+# LinDoc
 
 个人技术笔记，基于 nsrh-doc 的 VitePress 1.6.4 文档站点结构与开发约定独立创建。
 
