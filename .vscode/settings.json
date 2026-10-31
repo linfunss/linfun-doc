@@ -1,0 +1,26 @@
+{
+  "npm.packageManager": "pnpm",
+  "npm.scriptRunner": "pnpm",
+  "terminal.integrated.profiles.linux": {
+    "文档开发服务器": {
+      "path": "/bin/bash",
+      "args": [
+        "-lc",
+        "pnpm run dev; exec bash -l"
+      ]
+    }
+  },
+  "terminal.integrated.profiles.windows": {
+    "文档开发服务器 (WSL Debian)": {
+      "path": "C:\\Windows\\System32\\wsl.exe",
+      "args": [
+        "-d",
+        "Debian",
+        "--",
+        "bash",
+        "-lc",
+        "pnpm run dev; exec bash -l"
+      ]
+    }
+  }
+}
