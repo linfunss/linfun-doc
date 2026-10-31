@@ -1,0 +1,50 @@
+/* 浅色模式：链接、导航选中状态与首页标题使用品牌主色。 */
+:root {
+  --vp-c-brand-1: #1677c8;
+  --vp-c-brand-2: #125d9c;
+  --vp-c-brand-3: #1677c8;
+  --vp-c-brand-soft: rgba(22, 119, 200, 0.14);
+
+  /* 首页 Logo 光晕：品牌蓝 → 白色 → 指定蓝色 #363AA1。 */
+  --vp-home-hero-image-background-image: linear-gradient(
+    135deg,
+    #1677c8 0%,
+    #ffffff 50%,
+    #363aa1 100%
+  );
+  --vp-home-hero-image-filter: blur(56px);
+}
+
+/* 深色模式的文字使用更亮的蓝色，按钮保留品牌主色和白色文字。 */
+.dark {
+  --vp-c-brand-1: #75c7fa;
+  --vp-c-brand-2: #56b4ee;
+  --vp-c-brand-3: #1677c8;
+  --vp-c-brand-soft: rgba(86, 180, 238, 0.16);
+  --vp-button-brand-hover-bg: #125d9c;
+  --vp-button-brand-active-bg: #0d4778;
+
+  /* 深色背景下降低光晕强度，避免抢过 Logo。 */
+  --vp-home-hero-image-background-image: linear-gradient(
+    135deg,
+    rgba(22, 119, 200, 0.65) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(54, 58, 161, 0.65) 100%
+  );
+}
+
+/* 使用固定北京时间、精确到秒的文档更新时间。 */
+.VPDocFooter .edit-info { display: none; }
+.document-footer-info { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-bottom: 18px; }
+.document-edit-link { display: inline-flex; align-items: center; gap: 8px; color: var(--vp-c-brand-1); font-size: 14px; font-weight: 500; line-height: 32px; }
+.document-updated { margin: 0; margin-left: auto; color: var(--vp-c-text-2); font-size: 14px; font-weight: 500; line-height: 24px; text-align: right; }
+.build-commit { display: inline-flex; align-items: center; gap: 6px; margin-left: 16px; flex-shrink: 0; order: 1; color: var(--vp-c-text-2); font-family: var(--vp-font-family-mono); font-size: 13px; white-space: nowrap; }
+.build-commit:hover { color: var(--vp-c-brand-1); }
+.build-commit:hover .build-commit-hash,
+.build-commit:focus-visible .build-commit-hash { text-decoration: underline; text-underline-offset: 3px; }
+
+/* 与 VitePress 默认页脚保持一致的分隔线间距。 */
+@media (min-width: 640px) {
+  .document-footer-info { padding-bottom: 14px; }
+  .document-updated { line-height: 32px; }
+}
