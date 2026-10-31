@@ -11,7 +11,7 @@ const commit = isBuild ? execFileSync('git', ['rev-parse', 'HEAD'], {
 }).trim() : ''
 
 // favicon 统一在这里维护。
-const base = process.env.VITEPRESS_BASE || '/linfun-doc/'
+const base = '/'
 const favicon = `${base}favicon.svg`
 
 export default defineConfig({

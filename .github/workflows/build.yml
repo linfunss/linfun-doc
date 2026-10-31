@@ -20,8 +20,8 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     env:
-      # GitHub Pages 个人仓库站点使用仓库名子路径。
-      VITEPRESS_BASE: '/linfun-doc/'
+      # 自定义域名 doc.lin-fun.com 使用根路径。
+      VITEPRESS_BASE: '/'
     steps:
       - name: Checkout source and document history
         uses: actions/checkout@v4
