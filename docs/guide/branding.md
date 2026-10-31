@@ -21,13 +21,13 @@ description: 维护网站配置、Logo、主题颜色、首页和中文搜索
 
 ## 替换 Logo 与浏览器图标
 
-当前导航栏、首页 Logo 和 favicon 都使用 `docs/public/favicon.svg`。
+当前导航栏和首页 Logo 使用 `docs/public/logo.svg`，浏览器图标使用 `docs/public/favicon.ico`。
 
 - 浏览器图标：`config.mts` 的 `head` 中 `rel: 'icon'`。
 - 导航栏 Logo：`themeConfig.logo`。
 - 首页大 Logo：`docs/index.md` 的 `hero.image`。
 
-只替换同名图片即可更新资源；换文件名时要同步修改上述引用。当前 SVG 图标的 MIME 类型是 `image/svg+xml`。
+只替换同名图片即可更新资源；换文件名时要同步修改上述引用。当前 ICO 图标的 MIME 类型是 `image/x-icon`。Logo 为深色图形，深色模式通过 CSS 反色以保持清晰。
 
 浅色与深色可以配置不同图片：
 
@@ -53,10 +53,10 @@ logo: {
 
 ```css
 :root {
-  --vp-c-brand-1: #1677c8; /* 链接与选中状态 */
-  --vp-c-brand-2: #125d9c; /* 悬停颜色 */
-  --vp-c-brand-3: #1677c8; /* 品牌按钮背景 */
-  --vp-c-brand-soft: rgba(22, 119, 200, 0.14);
+  --vp-c-brand-1: #495BE4; /* 链接与选中状态 */
+  --vp-c-brand-2: #3D4DCC; /* 悬停颜色 */
+  --vp-c-brand-3: #495BE4; /* 品牌按钮背景 */
+  --vp-c-brand-soft: rgba(73, 91, 228, 0.14);
 }
 ```
 
@@ -69,7 +69,7 @@ logo: {
 ```css
 :root {
   --vp-home-hero-image-background-image:
-    linear-gradient(135deg, #1677c8 0%, #ffffff 50%, #363aa1 100%);
+    linear-gradient(135deg, #495BE4 0%, #ffffff 50%, #363aa1 100%);
   --vp-home-hero-image-filter: blur(56px);
 }
 ```
@@ -78,7 +78,7 @@ logo: {
 
 ## 路径与部署设置
 
-当前 `base` 为 `/linfun-doc/`（GitHub Pages 项目路径），`cleanUrls` 已启用。部署到 `/doc/` 子路径时修改 `base` 并重新构建，同时检查图片与 favicon 地址。启用 cleanUrls 的托管服务应支持无后缀地址解析到 HTML 文件，部署后直接刷新深层页面验证是否出现 404。
+当前 `base` 为 `/`（自定义域名根路径），`cleanUrls` 已启用。部署到 `/doc/` 子路径时修改 `base` 并重新构建，同时检查图片与 favicon 地址。启用 cleanUrls 的托管服务应支持无后缀地址解析到 HTML 文件，部署后直接刷新深层页面验证是否出现 404。
 
 `lastUpdated` 从 Git 读取更新时间，未提交的新文章没有该时间。`editLink` 已启用，页面底部的“在 GitHub 编辑此页”指向 `linfunss/linfun-doc` 仓库 `dev` 分支的对应 Markdown 文件；正式域名相关的 canonical 与分享地址应在明确部署地址后填写。
 

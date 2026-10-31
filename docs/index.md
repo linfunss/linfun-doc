@@ -1,12 +1,12 @@
 ---
 layout: home
 hero:
-  name: LinFun
+  name: LinDoc
   text: 把实践写成可复用的笔记
   tagline: 开发环境、部署网络与日常探索，记录过程，也留下原因。
   image:
-    src: /favicon.svg
-    alt: LinFun 文档
+    src: /logo.svg
+    alt: LinDoc
   actions:
     - theme: brand
       text: 开发环境

@@ -12,27 +12,27 @@ const commit = isBuild ? execFileSync('git', ['rev-parse', 'HEAD'], {
 
 // favicon 统一在这里维护。
 const base = '/'
-const favicon = `${base}favicon.svg`
+const favicon = `${base}favicon.ico`
 
 export default defineConfig({
   // 网站级配置：作用于整个站点。
   lang: 'zh-CN',
-  title: 'LinFun',
-  description: 'LinFun 的技术笔记',
+  title: 'LinDoc',
+  description: 'LinDoc 的技术笔记',
 
   // 部署在域名根目录使用 /；如果部署到 example.com/doc/，改为 /doc/。
   base,
-  titleTemplate: ':title | LinFun',  // 浏览器标签标题
+  titleTemplate: ':title | LinDoc',  // 浏览器标签标题
   appearance: true, // 黑白切换
   lastUpdated: true,// 从 Git 提交读取修改时间。
   // 使用无后缀地址；部署服务器需支持将其解析到对应 HTML 文件。
   cleanUrls: true,
   // HTML <head> 元信息。未确定正式域名，因此暂不配置 canonical / og:url。
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: favicon }],
-    ['meta', { name: 'theme-color', content: '#1677c8' }],
+    ['link', { rel: 'icon', type: 'image/x-icon', href: favicon }],
+    ['meta', { name: 'theme-color', content: '#495BE4' }],
     ['meta', { property: 'og:type', content: 'website' }],
-    ['meta', { property: 'og:site_name', content: 'LinFun' }]
+    ['meta', { property: 'og:site_name', content: 'LinDoc' }]
   ],
   markdown: {
     // 所有代码块默认显示行号。
@@ -43,11 +43,11 @@ export default defineConfig({
   themeConfig: {
     buildCommit: { hash: commit ? commit.slice(0, 7) : 'a1b2c3d', url: commit ? `https://github.com/linfunss/linfun-doc/commit/${commit}` : 'https://github.com/linfunss/linfun-doc/commits/dev/' },
     // public 下的资源直接使用 /文件名，主题会自动处理部署 base。
-    logo: { light: favicon, dark: favicon, alt: 'LinFun 文档 Logo' },
+    logo: { light: '/logo.svg', dark: '/logo.svg', alt: 'LinDoc Logo' },
     // 导航栏title。
-    siteTitle: 'LinFun',
+    siteTitle: 'LinDoc',
     // 页脚默认显示在首页或没有侧边栏的页面。
-    footer: { message: 'LinFun 的技术笔记' },
+    footer: { message: 'LinDoc 的技术笔记' },
     lastUpdated: { text: '最后更新', formatOptions: { dateStyle: 'medium' } },
     darkModeSwitchLabel: '外观',
     lightModeSwitchTitle: '切换至浅色模式',
